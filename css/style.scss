@@ -1,0 +1,268 @@
+@charset "utf-8";
+$width: 1170;
+
+$color-main: #000;
+$color-text: #898989;
+$color-accent: #e40065;
+
+@mixin inner($w: $width + px) {
+  max-width: $w;
+  width: 88%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@mixin flex($a: flex-start, $j: space-between) {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: $j;
+  align-items: $a;
+}
+
+/*base----------------------------------------------------------*/
+
+body {
+  color: $color-main;
+  font-size: 14px;
+  font-family: "Helvetica", "Helvetica Neue", "Yu Gothic", "Hiragino Sans",
+    "Hiragino Kaku Gothic ProN", "Meiryo", sans-serif;
+  line-height: (24/14);
+  letter-spacing: (50/1000) + em;
+  background-color: #fff;
+}
+ul,
+li {
+  list-style: none;
+}
+
+a {
+  color: $color-main;
+  text-decoration: none;
+}
+
+ul {
+  margin: 0;
+  padding-left: 0;
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  vertical-align: bottom;
+}
+
+/* header */
+.header {
+  margin: 70px 0 100px;
+
+  &__inner {
+    @include inner();
+    @include flex(flex-end);
+  }
+}
+.gnav {
+  &__list {
+    @include flex();
+  }
+  &__item {
+    margin-left: 30px;
+
+    &__a {
+      font-weight: bold;
+    }
+  }
+}
+
+// footer
+.footer {
+  &__inner {
+    @include inner();
+  }
+
+  &__copy {
+    padding: 100px 0 60px;
+    text-align: right;
+
+    small {
+      color: $color-text;
+      font-size: 12px;
+      font-weight: bold;
+    }
+  }
+}
+
+// works {
+.works {
+  &__inner {
+    @include inner();
+  }
+}
+.visual {
+  &__image {
+    margin-bottom: 100px;
+  }
+}
+
+// unit
+.unit {
+  &__caption {
+    color: $color-text;
+    font-size: 12px;
+  }
+  &__title {
+    color: #000;
+    margin-bottom: 30px;
+    line-height: (42/32);
+    font-weight: normal;
+    font-size: 32px;
+  }
+  &__title::after {
+    content: "";
+    display: block;
+    border-bottom: 1px #000 solid;
+    width: 120px;
+    margin-top: 30px;
+    margin-bottom: 40px;
+  }
+  &__jptext {
+    font-size: 14px;
+    font-weight: normal;
+  }
+  &__engtext {
+    margin-top: 40px;
+    font-size: 14px;
+    font-family: "Times New Roman", Times, serif;
+    font-style: italic;
+  }
+  &__column {
+    @include flex();
+    margin-top: 200px;
+    margin-bottom: 60px;
+  }
+  &__body {
+    max-width: 700px;
+  }
+}
+// card
+
+.card {
+  width: (1170/3);
+  margin: 60px 0 100px 0;
+  &__list {
+    @include flex();
+  }
+  &__image {
+    margin-bottom: 30px;
+  }
+  &__title {
+    margin-bottom: 30px;
+    font-size: 20px;
+    color: $color-text;
+  }
+  &__text {
+    color: $color-text;
+  }
+}
+
+// index.html
+// project
+
+.project {
+  background-color: #fdf8eb;
+  &__inner {
+    @include inner();
+  }
+  &__image {
+    margin-bottom: 30px;
+  }
+  &__list {
+    @include flex();
+    width: (500 /2);
+    margin-top: 60px;
+    margin-bottom: 30px;
+  }
+  &__item {
+    padding-bottom: 100px;
+  }
+  &__title {
+    display: inline-block;
+    background-color: #e40065;
+    margin-bottom: 35px;
+    padding: 5px 20px;
+    font-size: 12px;
+    border-radius: 35px;
+    color: #fff;
+  }
+}
+
+// company.html
+// company
+.company {
+  &__inner {
+    @include inner();
+  }
+}
+
+// company_project
+
+.company_project {
+  &__title {
+    display: inline-block;
+    color: #fff;
+    font-size: 12px;
+    font-weight: bold;
+    background-color: $color-accent;
+    border-radius: 15px;
+    margin-bottom: 30px;
+    padding: 5px 10px;
+  }
+  &__list {
+    margin-top: 40px;
+  }
+
+  &__text {
+    font-size: 20px;
+  }
+
+  &__item {
+    margin-top: 15px;
+  }
+
+  &__1 {
+    color: #fff;
+    margin-bottom: 60px;
+    padding: 150px 80px 160px;
+    background: url(../images/bg_project01.jpg) no-repeat center/cover;
+  }
+
+  &__2 {
+    color: #fff;
+    margin-bottom: 60px;
+    padding: 150px 80px 160px;
+    background: url(../images/bg_project02.jpg) no-repeat center/cover;
+  }
+}
+
+// company_card
+.company_card {
+  background-color: #fdf8eb;
+  width: (1170/3);
+  &__inner {
+    @include inner();
+  }
+  &__list {
+    @include flex();
+    padding: 100px 0 120px;
+  }
+  &__image {
+    margin-bottom: 30px;
+  }
+  &__title {
+    font-size: 20px;
+  }
+  &__text {
+    color: $color-text;
+    margin-bottom: 40px;
+  }
+}
